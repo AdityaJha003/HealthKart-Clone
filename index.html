@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sasta HealthKart</title>
+    <link rel="stylesheet" href="./index.css">
+
+    
+
+    <!-- icon CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="https://www.healthkart.com/favicon.ico" type="image/x-icon">
+
+</head>
+
+<body>
+    <header> 
+    <!-- NAVBAR START -->
+    <div id="navbar">
+        <div class="container">
+            <div style="margin-left: 50px;" class="logo">
+            <a href="#" style="margin-left: 10px;"><img src="data:image/png;base64,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"
+                    alt="">
+            </div>
+            <form id="searchForm" action="">
+                <a><i style="margin-top: 6px; color: #77777C;" class="fa fa-search" id="searchIcon" aria-hidden="true"></i></a>
+                <input style="border: none; background-color: #F7F7F7;  border-radius: 6px; height: 52px;
+                width: 570px; padding-left: 39px;" type="text" id="search" placeholder="Search for products and brands...">
+            </form>
+ 
+            <button class="button button3" style="height: min-content; margin-top: 24px; width: 120px; margin-left: 70px; margin-right: 50px;">Login</button>
+   
+            <div id="cartClick">
+                <a href="#">
+                    <img src="https://img2.hkrtcdn.com/react/static/media/common/header/cart.svg" alt="" id="cartItem">
+                    <p id="cartOnNum"></p>
+                </a>
+
+                <div class="cartAdd">
+                <p style="margin-top: 11px;">Your Cart Is Empty!</p>
+                    <button style="background-color: #32c4c4; border: none; border-radius: 5px;" id="cart"><a href="#" >Proceed TO Cart</a></button>
+                </div>
+            </div>
+    </div>
+    <div class="clearDiv"></div>
+    </div>
+    <div style="border-bottom: none;" id="categories">  <div style="padding-bottom: 3.3%; padding-top: 10px;" class="container">
+        <ul id="catLinks">
+            <li style=" margin-top: 0px;">
+                <a style="margin-top: 1px; margin-left: 20px;" class="button button4" href="#"><svg style="margin-left: 5px;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#00b8b9}</style><path d="M40 48C26.7 48 16 58.7 16 72v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V72c0-13.3-10.7-24-24-24H40zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zM16 232v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V232c0-13.3-10.7-24-24-24H40c-13.3 0-24 10.7-24 24zM40 368c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V392c0-13.3-10.7-24-24-24H40z"/></svg>  Shop By Category</a>
+                <ul class="dropdown">
+                    <li id="li"><a href="#">Sports Nutrition</a></li>
+                    <li id="li"><a href="#">Vitamins & Supplements</a></li>
+                    <li id="li"><a href="#">Ayurveda & Herbs</a></li>
+                    <li id="li"><a href="#">Health Food & Drinks</a></li>
+                    <li id="li"><a href="#">Fitness</a></li></a>
+                    <li id="li"><a href="#">Wellness</a></li>
+                    <li id="li"><a href="#">Service Program</a></li>
+                </ul>
+            </li>
+            <li style="color: #77777D;"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#00b8b9}</style><path d="M0 80V229.5c0 17 6.7 33.3 18.7 45.3l176 176c25 25 65.5 25 90.5 0L418.7 317.3c25-25 25-65.5 0-90.5l-176-176c-12-12-28.3-18.7-45.3-18.7H48C21.5 32 0 53.5 0 80zm112 32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg> Bestsellers</a></li>
+            <li style="color: #77777D;"><a href="#"> Brand</a></li>
+            <li style="color: #77777D;"><a href="#">Offer Zone</a></li>
+            <li style="color: #77777D;"><a href="#"><i class='fab fa-blogger-b'></i><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#77777d}</style><path d="M446.6 222.7c-1.8-8-6.8-15.4-12.5-18.5-1.8-1-13-2.2-25-2.7-20.1-.9-22.3-1.3-28.7-5-10.1-5.9-12.8-12.3-12.9-29.5-.1-33-13.8-63.7-40.9-91.3-19.3-19.7-40.9-33-65.5-40.5-5.9-1.8-19.1-2.4-63.3-2.9-69.4-.8-84.8.6-108.4 10C45.9 59.5 14.7 96.1 3.3 142.9 1.2 151.7.7 165.8.2 246.8c-.6 101.5.1 116.4 6.4 136.5 15.6 49.6 59.9 86.3 104.4 94.3 14.8 2.7 197.3 3.3 216 .8 32.5-4.4 58-17.5 81.9-41.9 17.3-17.7 28.1-36.8 35.2-62.1 4.9-17.6 4.5-142.8 2.5-151.7zm-322.1-63.6c7.8-7.9 10-8.2 58.8-8.2 43.9 0 45.4.1 51.8 3.4 9.3 4.7 13.4 11.3 13.4 21.9 0 9.5-3.8 16.2-12.3 21.6-4.6 2.9-7.3 3.1-50.3 3.3-26.5.2-47.7-.4-50.8-1.2-16.6-4.7-22.8-28.5-10.6-40.8zm191.8 199.8l-14.9 2.4-77.5.9c-68.1.8-87.3-.4-90.9-2-7.1-3.1-13.8-11.7-14.9-19.4-1.1-7.3 2.6-17.3 8.2-22.4 7.1-6.4 10.2-6.6 97.3-6.7 89.6-.1 89.1-.1 97.6 7.8 12.1 11.3 9.5 31.2-4.9 39.4z"/></svg> Blogs</a></li>
+            <li style="color: #77777D;"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#77777d}</style><path d="M190.5 68.8L225.3 128H224 152c-22.1 0-40-17.9-40-40s17.9-40 40-40h2.2c14.9 0 28.8 7.9 36.3 20.8zM64 88c0 14.4 3.5 28 9.6 40H32c-17.7 0-32 14.3-32 32v64c0 17.7 14.3 32 32 32H480c17.7 0 32-14.3 32-32V160c0-17.7-14.3-32-32-32H438.4c6.1-12 9.6-25.6 9.6-40c0-48.6-39.4-88-88-88h-2.2c-31.9 0-61.5 16.9-77.7 44.4L256 85.5l-24.1-41C215.7 16.9 186.1 0 154.2 0H152C103.4 0 64 39.4 64 88zm336 0c0 22.1-17.9 40-40 40H288h-1.3l34.8-59.2C329.1 55.9 342.9 48 357.8 48H360c22.1 0 40 17.9 40 40zM32 288V464c0 26.5 21.5 48 48 48H224V288H32zM288 512H432c26.5 0 48-21.5 48-48V288H288V512z"/></svg> Gift Cart</a></li>
+            <li style="color: #77777D;"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#77777d}</style><path d="M64 0C28.7 0 0 28.7 0 64V352c0 35.3 28.7 64 64 64h96v80c0 6.1 3.4 11.6 8.8 14.3s11.9 2.1 16.8-1.5L309.3 416H448c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64z"/></svg> Get Customer Support</a></li>
+            <li><i class="fa fa-map-marker"></i><a> Find a Store</a></li>
+        </ul>
+        <!-- <div class="rightSideContaint"></div> -->
+    </div>
+</div></div>
+<div class="alert alert-primary">
+    India's Largest D2C Nutrition Platform
+  </div>
+
+<!-- Navbar End -->
+</header> 
+    <!-- CAROUSEL START -->
+    <div class="slideshow-container">
+
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides slide">
+          <img src="https://img6.hkrtcdn.com/30062/bnr_3006195_o.jpg" style="width:100%; border-radius: 8px;">
+
+
+        </div>
+      
+        <div class="mySlides slide">
+          <img src="https://img6.hkrtcdn.com/30048/bnr_3004765_o.jpg" style="width:100%; border-radius: 8px;">
+
+        </div>
+      
+        <div class="mySlides slide">
+          <img src="https://img8.hkrtcdn.com/29187/bnr_2918647_o.jpg" style="width:100%; border-radius: 8px;">
+ 
+        </div>
+        <div class="mySlides slide">
+            <img src="https://img10.hkrtcdn.com/29545/bnr_2954439_o.jpg" style="width:100%; border-radius: 8px;">
+ 
+          </div>
+          <div class="mySlides slide">
+            <img src="https://img8.hkrtcdn.com/30048/bnr_3004757_o.jpg" style="width:100%; border-radius: 8px;">
+
+          </div>
+          <div class="mySlides slide">
+            <img src="https://img10.hkrtcdn.com/29899/bnr_2989879_o.png" style="width:100%; border-radius: 8px;">
+     
+          </div>
+        <!-- Next and previous buttons -->
+        <a style="margin-left: 35px;" class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a style="margin-right: 35px;" class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <br>
+      
+      <!-- The dots/circles -->
+      <div class="dot-container" style="text-align:center; margin: auto; margin-bottom: 25px;">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+        <span class="dot" onclick="currentSlide(6)"></span>
+      </div>
+      <div class="alert alert-secoundry"></div>
+    <div>
+        <div style="background-color: white;">
+        <h1 style="margin-left: 300px;" class="h1">Hi, What are you looking for?</h1>
+        <div id="grid">
+            <div id="grid_box">
+                <h3>Sports <br> Nutrition</h3>
+                <img src="https://img10.hkrtcdn.com/6544/bnr_654359_o.png" />
+                <a href="#"> View all →</a>
+            </div>
+            <div id="grid_box">
+                <h3>Vitamins & <br> Supplements</h3>
+                <img src="https://img4.hkrtcdn.com/6543/bnr_654233_o.png" />
+                <a href="#"> View all →</a>
+            </div>
+            <div id="grid_box">
+                <h3>Ayurveda & <br> Herbs</h3>
+                <img src="https://img2.hkrtcdn.com/6544/bnr_654351_o.png" />
+                <a href="#"> View all →</a>
+            </div>
+            <div id="grid_box">
+                <h3> Health Food <br>& Drinks</h3>
+                <img src="https://img8.hkrtcdn.com/4044/bnr_404387_o.png" />
+                <a href="#"> View all →</a>
+            </div>
+            <div id="grid_box">
+                <h3>weight Loss</h3>
+                <img src="https://img6.hkrtcdn.com/6542/bnr_654165_o.png" />
+                <a href="#"> View all →</a>
+            </div>
+            <div id="grid_box">
+                <h3>Wellness</h3>
+                <img src="https://img4.hkrtcdn.com/6544/bnr_654353_o.png" />
+                <a href="#"> View all →</a>
+            </div>
+            <div id="grid_box">
+                <h3>Immunity & <br> Wellbeing</h3>
+                <img src="https://img4.hkrtcdn.com/6543/bnr_654213_o.png" />
+                <a href="#"> View all →</a>
+            </div>
+            <div id="grid_box">
+                <h3>Fitness</h3>
+                <img src="https://img6.hkrtcdn.com/3802/bnr_380125_o.png" />
+                <a href="#"> View all →</a>
+            </div>
+        </div>
+        <!-- <div id="cl"></div> -->
+
+        <div id="sports">
+            <h1>Popular in Sports Nutrition</h1>
+
+                <div id="pop">
+
+                <div>
+                    <img src="https://img2.hkrtcdn.com/6544/bnr_654341_o.png" />
+                    <h4>Whey Protiens</h4>
+                </div>
+
+                <div>
+                    <img src="https://img6.hkrtcdn.com/6544/bnr_654345_o.png" />
+                    <h4>Whey Protien Isolate</h4>
+                </div>
+
+                <div>
+                    <img src="https://img4.hkrtcdn.com/6544/bnr_654343_o.png" />
+                    <h4>Mass Gainers</h4>
+                </div>
+
+                <div>
+                    <img src="https://img8.hkrtcdn.com/6544/bnr_654347_o.png" />
+                    <h4>Amino Acids / BCAAs</h4>
+                </div>
+
+                <div>
+                    <img src="https://img10.hkrtcdn.com/6544/bnr_654349_o.png" />
+                    <h4>Pre-Workout</h4>
+                </div>
+
+            </div>
+        </div>
+
+
+
+            <div id="sports">
+
+                <h1>Popular in Weight Loss</h1>
+
+                <div id="pop">
+
+                <div>
+                    <img src="https://img6.hkrtcdn.com/6542/bnr_654165_o.png" />
+                    <h4>Meal Replacement</h4>
+                </div>
+
+                    <div>
+                        <img src="https://img6.hkrtcdn.com/9523/bnr_952235_o.png" />
+                        <h4>Energy Drinks</h4>
+                    </div>
+
+                <div>
+                    <img src="https://img8.hkrtcdn.com/4045/bnr_404407_o.png" />
+                    <h4>Green coffee Bean extract</h4>
+                </div>
+
+                    <div>
+                        <img src="https://img8.hkrtcdn.com/6543/bnr_654237_o.png" />
+                        <h4>Probiotics</h4>
+                    </div>
+
+                <div>
+                    <img src="https://img6.hkrtcdn.com/6543/bnr_654235_o.png" />
+                    <h4>Green Tea</h4>
+                </div>
+
+                </div>
+            </div>
+
+            <div id="sports">
+                <h1>Popular in Health Foods & Drinks</h1>
+
+                <div id="pop">
+                    <div>
+                        <img src="https://img2.hkrtcdn.com/6543/bnr_654291_o.png" />
+                        <h4>Apple Cedar Venigar</h4>
+                    </div>
+
+                    <div>
+                        <img src="https://img4.hkrtcdn.com/6543/bnr_654293_o.png" />
+                        <h4>Penaut Butter</h4>
+                    </div>
+
+                    <div>
+                        <img src="https://img2.hkrtcdn.com/6544/bnr_654301_o.png" />
+                        <h4>Protein bars</h4>
+                    </div>
+
+                    <div>
+                        <img src="https://img10.hkrtcdn.com/6543/bnr_654299_o.png" />
+                        <h4>Cerals</h4>
+                    </div>
+
+                    <div>
+                        <img src="https://img6.hkrtcdn.com/6543/bnr_654295_o.png" />
+                        <h4>Nutrition For Chlidren</h4>
+                    </div>
+
+                </div>
+            </div>
+
+            <div style="margin-bottom: 9px;" id="sports">
+                <div>
+                    <h1>Popular In Fitness</h1>
+                </div>
+
+                <div id="pop">
+                    <div>
+                        <img src="https://img2.hkrtcdn.com/3802/bnr_380131_o.png" />
+                        <h4>Gym Essentials</h4>
+                    </div>
+
+                    <div>
+                        <img src="https://img2.hkrtcdn.com/3801/bnr_380091_o.png" />
+                        <h4>Fitness Equipment</h4>
+                    </div>
+
+                    <div>
+                        <img src="https://img6.hkrtcdn.com/3802/bnr_380125_o.png" />
+                        <h4>Gym Accessories</h4>
+                    </div>
+
+                    <div>
+                        <img src="https://img10.hkrtcdn.com/3802/bnr_380129_o.png" />
+                        <h4>Gym Supports</h4>
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+        
+        <div style="padding-top: 35px;" class="alert alert-secoundry">
+
+            <!-- footer -->
+
+
+            <div>
+                <div id="extra">
+                    <div class="spend">
+                        <img src="https://img2.hkrtcdn.com/10330/bnr_1032991_o.png" />
+                        <p>Spend ₹10000 more to reach HK Premium</p>
+                    </div>
+                </div>
+
+            <div id="plus">
+                <div  style="border: none;" class="plus">
+                    <p style="text-align: left;">+ More Details about Health, Nutrition & Body Building Supplements</p>
+                    <br>
+                    <p align="left">Made by Aditya Narain Jha</p>
+                </div>
+            </div>
+        </div>
+        </div>
+      <div class="back">
+
+
+
+
+        <div id="text">
+            <div style="background-color: #0D2122;" id="footer1">
+
+                <div>
+                    <h5>HEALTHKART</h5>
+                    <p id="text">About Us</p>
+                    <p id="text">Contact Us</p>
+                    <p id="text">Refer & Earn</p>
+                    <p id="text">Loyalty Program</p>
+                    <p id="text">HK Consult</p>
+                    <p id="text">Blogs, Videos & More</p>
+                    <p id="text">Brand Directory</p>
+                    <p id="text">Authenticity Guaranteed</p>
+                    <p id="text">Careers</p>
+                </div>
+                <div>
+                    <h5>BRANDS</h5>
+                    <p id="text">MuscleBlaze</p>
+                    <p id="text">TrueBasics</p>
+                    <p id="text">JustHer</p>
+                    <p id="text">Nouriza</p>
+                    <p id="text" >Gritzo</p>
+                    <p id="text">bGREEN</p>
+                </div>
+                <div>
+                    <h5>HEALTH & FITNESS</h5>
+                    <p id="text">Bodybuilding</p>
+                    <p id="text">Weight Loss</p>
+                    <p id="text">Hair & Skin Care</p>
+                    <p id="text">Sports Nutrition</p>
+                    <p id="text">Vitamins & Supplements</p>
+                    <p id="text">Ayurveda & Herbs</p>
+                    <p id="text">Health Food & Drinks</p>
+                    <p id="text">Fitness</p>
+                    <p id="text">Wellness</p>
+                    <p id="text">Consult Plans</p>
+                </div>
+                <div>
+                    <h5>POLICIES</h5>
+                    <p id="text">Terms & Conditions</p>
+                    <p id="text">Delivery Policy</p>
+                    <p id="text">Privacy Policy</p>
+                    <p id="text">Returns Policy</p>
+                </div>
+                <div>
+                    <h5>QUICK LINKS</h5>
+                    <p id="text">My Account</p>
+                    <p id="text">Track Your Order</p>
+                    <p id="text">Store Locator</p>
+                    <p id="text">HK Cash</p>
+                    <p id="text">HK Coupons</p>
+                    <p id="text">FAQs</p>
+                    <p id="text">Sell On HealthKart</p>
+                </div>
+                <div>
+                    <h5>ABOUT HEALTHKART</h5>
+                    <p id="text">HealthKart.com is India’s largest online health & fitness store for men and women. Shop online
+                        from the
+                        latest collections of health, fitness and similar products featuring the best brands.</p>
+                    <h5>SUBSCRIBE TO OUR NEWSLETTER</h5>
+                    <p id="text"> Be the first one to receive amazing offers, deals and news</p>
+                    <dv></dv>
+                    <h5>CONNECT WITH US</h5>
+                    <div class="contact">
+                        <img src="https://img2.hkrtcdn.com/react/static/media/common/footer/instagram.svg" />
+                        <img src="https://img2.hkrtcdn.com/react/static/media/common/footer/facebook.svg" />
+                        <img src="https://img2.hkrtcdn.com/react/static/media/common/footer/twitter.svg" />
+                        <img src="https://img2.hkrtcdn.com/react/static/media/common/footer/youtube.svg" />
+                        <img src="https://img2.hkrtcdn.com/react/static/media/common/footer/pinterest.svg" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="clear1"></div>
+            <hr>
+            <div>
+                <div class="last">
+                    <img src="https://img2.hkrtcdn.com/react/static/media/common/footer/hk-consult.svg" />
+                    <img src="https://img2.hkrtcdn.com/react/static/media/common/footer/A-G.svg" />
+                    <img src="https://img2.hkrtcdn.com/react/static/media/common/footer/RP.svg" />
+                    <p id="text"><strong>Disclaimer:</strong> The information contained on HealthKart (www.healthkart.com or
+                        subdomains) is provided for informational purposes only and is not meant to substitute for the advice provided by your
+                        doctor or other healthcare professional. Information and statements regarding products, supplements,
+                        programs etc listed on HealthKart have not been evaluated by the Food and Drug Administration or any
+                        government authority and are not intended to diagnose, treat, cure, or prevent any disease. Please read
+                        product packaging carefully prior to purchase and use. The results from the products will vary from
+                        person to person. No individual result should be seen as typical. </p>
+                </div>
+                
+            </div>
+            <hr>
+            <div class="aler alert-bottem"></div>
+        </div>
+
+
+    </div>
+</body>
+
+    <script>
+        let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {
+    slideIndex = 1;
+  }    
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+
+function autoSlide() {
+  plusSlides(1); 
+}
+setInterval(autoSlide, 4000);
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "ArrowLeft") {
+    plusSlides(-1);
+  } else if (event.key === "ArrowRight") {
+    plusSlides(1); 
+  }
+});
+
+    </script>
+
+</html>
